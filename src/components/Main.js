@@ -60,7 +60,7 @@ function Main(props) {
       <section className="places" aria-label="Фотографии">
         <ul className="places__list">
           {cards.map(card => (
-            <Card card={card} onCardClick={props.onCardClick} />
+            <Card card={card} onCardClick={props.onCardClick} key={card._id} />
           ))}
         </ul>
       </section>

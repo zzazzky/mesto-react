@@ -2,7 +2,7 @@ function ImagePopup(props) {
   return (
     <div
       className={
-        props.card
+        props.card.link
           ? "popup popup_type_picture popup_opened"
           : "popup popup_type_picture"
       }
@@ -13,7 +13,11 @@ function ImagePopup(props) {
           type="button"
           onClick={props.onClose}
         ></button>
-        <img className="popup__image" src={props.card.link} />
+        <img
+          className="popup__image"
+          src={props.card.link}
+          link={props.card.name}
+        />
         <figcaption className="popup__caption">{props.card.name}</figcaption>
       </figure>
     </div>

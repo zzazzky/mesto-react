@@ -4,13 +4,14 @@ function Card(props) {
   }
 
   return (
-    <li key={props.card._id} className="place">
+    <li className="place">
       <button className="place__delete button"></button>
-      <div
+      <img
         className="place__image"
-        style={{ backgroundImage: `url(${props.card.link})` }}
+        src={props.card.link}
+        alt={props.card.name}
         onClick={handleClick}
-      ></div>
+      />
       <div className="place__caption">
         <h2 className="place__text">{props.card.name}</h2>
         <div className="place__like-container">
