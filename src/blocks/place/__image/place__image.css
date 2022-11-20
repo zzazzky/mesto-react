@@ -1,6 +1,6 @@
 .place__image {
   height: 282px;
-  object-fit: cover;
+  background-size: cover;
   position: relative;
   z-index: 1;
 }
