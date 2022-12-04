@@ -69,7 +69,7 @@ class Api {
     });
   }
 
-  setCardLike(cardId) {
+  _setCardLike(cardId) {
     return this._request(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: "PUT",
       headers: {
@@ -78,13 +78,21 @@ class Api {
     });
   }
 
-  removeCardLike(cardId) {
+  _removeCardLike(cardId) {
     return this._request(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: "DELETE",
       headers: {
         authorization: this._headers.authorization,
       },
     });
+  }
+
+  changeLikeCardStatus(cardId, isLiked) {
+    if (isLiked) {
+      return this._setCardLike(cardId);
+    } else {
+      return this._removeCardLike(cardId);
+    }
   }
 }
 
